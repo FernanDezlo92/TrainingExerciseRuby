@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_121142) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_123248) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +90,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_121142) do
     t.index ["organization_id"], name: "index_seasons_on_organization_id"
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.bigint "match_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_teams_on_match_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -110,4 +119,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_121142) do
   add_foreign_key "players", "users"
   add_foreign_key "rounds", "seasons"
   add_foreign_key "seasons", "organizations"
+  add_foreign_key "teams", "matches"
 end
