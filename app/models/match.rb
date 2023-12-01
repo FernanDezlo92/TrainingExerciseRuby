@@ -2,5 +2,5 @@
 
 class Match < ApplicationRecord
   belongs_to :round
-  has_many :team, dependent: :destroy
+  has_many :teams, dependent: :destroy
 end

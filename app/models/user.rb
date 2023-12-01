@@ -8,4 +8,9 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :players, dependent: :destroy
   has_many :organizations, through: :players
+
+  # validations
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 6 }
+  # methods
 end
