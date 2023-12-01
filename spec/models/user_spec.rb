@@ -11,7 +11,7 @@ RSpec.describe User do
     end
 
     context "when set to true" do
-      let(:user) { build(:user, admin: true) }
+      let(:user) { build(:user, :admin) }
 
       it "is true" do
         expect(user.admin).to be(true)
