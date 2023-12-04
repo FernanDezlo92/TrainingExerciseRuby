@@ -3,17 +3,15 @@
 class Team < ApplicationRecord
   belongs_to :match
   has_many :team_players, dependent: :destroy
+  has_many :players, through: :team_players
 
   # validations
   validates :color, presence: true
-  validates :match_id, numericality: { only_integer: true }
+
+  delegate :organization, to: :match
 
   # methods
-  def players
-    team_players.map(&:player)
-  end
-
-  def players_match
-    players.map(&:match)
+  def team_vs
+    match.teams.where.not(id:).first
   end
 end

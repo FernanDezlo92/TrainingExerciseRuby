@@ -3,7 +3,11 @@
 require "rails_helper"
 
 RSpec.describe User do
+  subject { user }
+
   let(:user) { build(:user) }
+
+  it { is_expected.to be_valid }
 
   describe "admin" do
     it "is false by default" do
