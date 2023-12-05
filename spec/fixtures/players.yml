@@ -1,0 +1,59 @@
+first_player:
+  user: first_user
+  organization: first_organization
+  admin: true
+
+second_player:
+  user: second_user
+  organization: first_organization
+  admin: false
+
+third_player:
+  user: third_user
+  organization: first_organization
+  admin: false
+
+fourth_player:
+  user: fourth_user
+  organization: first_organization
+  admin: false
+
+fifth_player:
+  user: fifth_user
+  organization: first_organization
+  admin: false
+
+sixth_player:
+  user: sixth_user
+  organization: first_organization
+  admin: false
+
+seventh_player:
+  user: seventh_user
+  organization: first_organization
+  admin: false
+
+eighth_player:
+  user: eighth_user
+  organization: first_organization
+  admin: false
+
+ninth_player:
+  user: ninth_user
+  organization: first_organization
+  admin: false
+
+tenth_player:
+  user: tenth_user
+  organization: first_organization
+  admin: false
+
+eleventh_player:
+  user: eleventh_user
+  organization: first_organization
+  admin: false
+
+twelfth_player:
+  user: twelfth_user
+  organization: first_organization
+  admin: false

@@ -1,0 +1,29 @@
+first_season_first_round:
+  name: "Round #1"
+  season: first_season
+  start_date: <%= Time.now - 60.days %>
+  end_date: <%= Time.now - 58.days %>
+
+first_season_second_round:
+  name: "Round #2"
+  season: first_season
+  start_date: <%= Time.now - 50.days %>
+  end_date: <%= Time.now - 49.days %>
+
+first_season_third_round:
+  name: "Round #3"
+  season: first_season
+  start_date: <%= Time.now - 40.days %>
+  end_date: <%= Time.now - 39.days %>
+
+second_season_first_round:
+  name: "Round #1"
+  season: second_season
+  start_date: <%= Time.now - 10.days %>
+  end_date: <%= Time.now - 9.days %>
+
+second_season_second_round:
+  name: "Round #2"
+  season: second_season
+  start_date: <%= Time.now - 1.day %>
+  end_date: <%= Time.now + 1.day %>

@@ -14,4 +14,15 @@ class Team < ApplicationRecord
   def team_vs
     match.teams.where.not(id:).first
   end
+
+  def points
+    return 0 unless team_vs
+    if score > team_vs.score
+      return 3
+    elsif score == team_vs.score
+      return 1
+    end
+
+    0
+  end
 end

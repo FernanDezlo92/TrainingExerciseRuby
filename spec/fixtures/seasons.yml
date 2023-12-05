@@ -1,0 +1,11 @@
+first_season:
+  name: "Season #1"
+  organization: first_organization
+  start_date: <%= Time.now - 60.days %>
+  end_date: <%= Time.now - 39.days %>
+
+second_season:
+  name: "Season #2"
+  organization: first_organization
+  start_date: <%= Time.now - 10.days %>
+  end_date: <%= Time.now + 30.days %>

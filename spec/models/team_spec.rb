@@ -15,7 +15,6 @@ RSpec.describe Team do
     let!(:other_team) { create(:team, match:) }
 
     it "returns the rival team" do
-      debugger
       expect(team.team_vs).to eq(other_team)
       expect(other_team.team_vs).to eq(team)
     end

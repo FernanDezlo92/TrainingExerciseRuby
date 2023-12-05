@@ -1,0 +1,169 @@
+# First Season
+
+## First Round
+
+### First Match
+
+first_season_first_round_first_match_first_team_first_player:
+  team: first_season_first_round_first_match_first_team
+  player: first_player
+
+first_season_first_round_first_match_first_team_second_player:
+  team: first_season_first_round_first_match_first_team
+  player: second_player
+
+first_season_first_round_first_match_first_team_third_player:
+  team: first_season_first_round_first_match_first_team
+  player: third_player
+
+first_season_first_round_first_match_second_team_first_player:
+  team: first_season_first_round_first_match_second_team
+  player: fourth_player
+
+first_season_first_round_first_match_second_team_second_player:
+  team: first_season_first_round_first_match_second_team
+  player: fifth_player
+
+first_season_first_round_first_match_second_team_third_player:
+  team: first_season_first_round_first_match_second_team
+  player: sixth_player
+
+first_season_first_round_second_match_first_team_first_player:
+  team: first_season_first_round_second_match_first_team
+  player: seventh_player
+
+### Second Match
+
+first_season_first_round_second_match_first_team_second_player:
+  team: first_season_first_round_second_match_first_team
+  player: eighth_player
+
+first_season_first_round_second_match_first_team_third_player:
+  team: first_season_first_round_second_match_first_team
+  player: ninth_player
+
+first_season_first_round_second_match_second_team_first_player:
+  team: first_season_first_round_second_match_second_team
+  player: tenth_player
+
+first_season_first_round_second_match_second_team_second_player:
+  team: first_season_first_round_second_match_second_team
+  player: eleventh_player
+
+first_season_first_round_second_match_second_team_third_player:
+  team: first_season_first_round_second_match_second_team
+  player: twelfth_player
+
+## Second Round
+
+### First Match
+
+first_season_second_round_first_match_first_team_first_player:
+  team: first_season_second_round_first_match_first_team
+  player: first_player
+
+first_season_second_round_first_match_first_team_second_player:
+  team: first_season_second_round_first_match_first_team
+  player: second_player
+
+first_season_second_round_first_match_first_team_third_player:
+  team: first_season_second_round_first_match_first_team
+  player: fourth_player
+
+first_season_second_round_first_match_second_team_first_player:
+  team: first_season_second_round_first_match_second_team
+  player: fifth_player
+
+first_season_second_round_first_match_second_team_second_player:
+  team: first_season_second_round_first_match_second_team
+  player: eleventh_player
+
+first_season_second_round_first_match_second_team_third_player:
+  team: first_season_second_round_first_match_second_team
+  player: twelfth_player
+
+## Third Round
+
+### First Match
+
+first_season_third_round_first_match_first_team_first_player:
+  team: first_season_third_round_first_match_first_team
+  player: seventh_player
+
+first_season_third_round_first_match_first_team_second_player:
+  team: first_season_third_round_first_match_first_team
+  player: sixth_player
+
+first_season_third_round_first_match_first_team_third_player:
+  team: first_season_third_round_first_match_first_team
+  player: third_player
+
+first_season_third_round_first_match_second_team_first_player:
+  team: first_season_third_round_first_match_second_team
+  player: fourth_player
+
+first_season_third_round_first_match_second_team_second_player:
+  team: first_season_third_round_first_match_second_team
+  player: first_player
+
+first_season_third_round_first_match_second_team_third_player:
+  team: first_season_third_round_first_match_second_team
+  player: eleventh_player
+
+# First Season
+
+## First Round
+
+### First Match
+
+second_season_first_round_first_match_first_team_first_player:
+  team: second_season_first_round_first_match_first_team
+  player: first_player
+
+second_season_first_round_first_match_first_team_second_player:
+  team: second_season_first_round_first_match_first_team
+  player: second_player
+
+second_season_first_round_first_match_first_team_third_player:
+  team: second_season_first_round_first_match_first_team
+  player: third_player
+
+second_season_first_round_first_match_second_team_first_player:
+  team: second_season_first_round_first_match_second_team
+  player: fourth_player
+
+second_season_first_round_first_match_second_team_second_player:
+  team: second_season_first_round_first_match_second_team
+  player: fifth_player
+
+second_season_first_round_first_match_second_team_third_player:
+  team: second_season_first_round_first_match_second_team
+  player: sixth_player
+
+## Second Round
+
+### First Match
+
+second_season_second_round_first_match_first_team_first_player:
+  team: second_season_second_round_first_match_first_team
+  player: first_player
+
+second_season_second_round_first_match_first_team_second_player:
+  team: second_season_second_round_first_match_first_team
+  player: eighth_player
+
+second_season_second_round_first_match_first_team_third_player:
+  team: second_season_second_round_first_match_first_team
+  player: third_player
+
+second_season_second_round_first_match_second_team_first_player:
+  team: second_season_second_round_first_match_second_team
+  player: second_player
+
+second_season_second_round_first_match_second_team_second_player:
+  team: second_season_second_round_first_match_second_team
+  player: tenth_player
+
+second_season_second_round_first_match_second_team_third_player:
+  team: second_season_second_round_first_match_second_team
+  player: twelfth_player

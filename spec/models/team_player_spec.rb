@@ -21,7 +21,7 @@ RSpec.describe TeamPlayer do
   describe "check_player_in_opponent" do
     let(:match) { create(:match) }
     let(:team) { create(:team, match:) }
-    let(:player) { create(:player, organization: match.organization ) }
+    let(:player) { create(:player, organization: match.organization) }
     let(:team_player) { build(:team_player, team:, player:) }
 
     context "when team has not opponent" do

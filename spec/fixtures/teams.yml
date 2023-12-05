@@ -1,0 +1,59 @@
+first_season_first_round_first_match_first_team:
+  match: first_season_first_round_first_match
+  name: "Team #1"
+  score: 3
+
+first_season_first_round_first_match_second_team:
+  match: first_season_first_round_first_match
+  name: "Team #2"
+  score: 3
+
+first_season_first_round_second_match_first_team:
+  match: first_season_first_round_second_match
+  name: "Team #1"
+  score: 1
+
+first_season_first_round_second_match_second_team:
+  match: first_season_first_round_second_match
+  name: "Team #2"
+  score: 5
+
+first_season_second_round_first_match_first_team:
+  match: first_season_second_round_first_match
+  name: "Team #1"
+  score: 2
+
+first_season_second_round_first_match_second_team:
+  match: first_season_second_round_first_match
+  name: "Team #2"
+  score: 0
+
+first_season_third_round_first_match_first_team:
+  match: first_season_third_round_first_match
+  name: "Team #1"
+  score: 5
+
+first_season_third_round_first_match_second_team:
+  match: first_season_third_round_first_match
+  name: "Team #2"
+  score: 5
+
+second_season_first_round_first_match_first_team:
+  match: second_season_first_round_first_match
+  name: "Team #1"
+  score: 0
+
+second_season_first_round_first_match_second_team:
+  match: second_season_first_round_first_match
+  name: "Team #2"
+  score: 1
+
+second_season_second_round_first_match_first_team:
+  match: second_season_second_round_first_match
+  name: "Team #1"
+  score:
+
+second_season_second_round_first_match_second_team:
+  match: second_season_second_round_first_match
+  name: "Team #2"
+  score:

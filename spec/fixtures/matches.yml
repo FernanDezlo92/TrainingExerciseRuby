@@ -1,0 +1,29 @@
+first_season_first_round_first_match:
+  round: first_season_first_round
+  start_time: <%= Time.now + 5.days %>
+  end_time: <%= Time.now + 6.days %>
+
+first_season_first_round_second_match:
+  round: first_season_first_round
+  start_time: <%= Time.now + 5.days %>
+  end_time: <%= Time.now + 6.days %>
+
+first_season_second_round_first_match:
+  round: first_season_second_round
+  start_time: <%= Time.now + 5.days %>
+  end_time: <%= Time.now + 6.days %>
+
+first_season_third_round_first_match:
+  round: first_season_third_round
+  start_time: <%= Time.now + 5.days %>
+  end_time: <%= Time.now + 6.days %>
+
+second_season_first_round_first_match:
+  round: second_season_first_round
+  start_time: <%= Time.now + 5.days %>
+  end_time: <%= Time.now + 6.days %>
+  
+second_season_second_round_first_match:
+  round: second_season_second_round
+  start_time: <%= Time.now + 5.days %>
+  end_time: <%= Time.now + 6.days %>

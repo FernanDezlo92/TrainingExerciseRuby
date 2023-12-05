@@ -45,8 +45,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_081601) do
   create_table "matches", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer "result_home"
-    t.integer "result_away"
     t.bigint "round_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,6 +100,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_081601) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "color"
+    t.integer "score"
     t.bigint "match_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
