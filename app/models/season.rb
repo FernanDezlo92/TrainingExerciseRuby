@@ -2,7 +2,7 @@
 
 class Season < ApplicationRecord
   include WithStartAndEndDate
-
   has_many :rounds, dependent: :destroy
   belongs_to :organization
+  scope :active, -> { where("end_date >= ?", Time.now.in_time_zone) }
 end
