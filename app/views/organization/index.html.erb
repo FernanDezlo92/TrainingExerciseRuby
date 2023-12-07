@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <%= render 'layouts/navbar/navbar' %>
+    <h1>Listing Organization</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @organizations.each do |organization| %>
+          <tr>
+            <td><%= organization.logo %></td>
+            <td><%= organization.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </body>
+</html>

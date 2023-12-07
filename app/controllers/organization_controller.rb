@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
 class OrganizationController < ApplicationController
-  def organization; end
+  before_action :authenticate_user!
+
+  def index
+    @organizations = Organization.all
+  end
 end
