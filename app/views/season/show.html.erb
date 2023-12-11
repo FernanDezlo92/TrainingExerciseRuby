@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+
+<body>
+  <%= render 'layouts/navbar/navbar' %>
+
+  <div class="container mt-4">
+    <h1><%= @season.name %></h1> 
+    <h2><%= @season.season_year %></h2>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Players Score</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Player</th>
+              <th scope="col">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @players.sort_by { |player| player.points_by_season(@season) }.each do |player| %>
+              <tr>
+                <th scope="row"><%= player.user.email %></th>
+                <td><%= player.points_by_season(@season) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Active Rounds</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @rounds.each do |round| %>
+              <tr>
+                <th scope="row"><%= round.id %></th>
+                <td><%= round.name %></td>
+                <td>
+                    <%= link_to "Show", season_path(@season) %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-info">
+            <a class="nav-link" href="/round">Show all rounds</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

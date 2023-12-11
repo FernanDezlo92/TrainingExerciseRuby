@@ -17,8 +17,8 @@ class Player < ApplicationRecord
 
   def points_by_season(season)
     points = 0
-    season.round.each do |round|
-      round.match.each do |match|
+    season.rounds.each do |round|
+      round.matches.each do |match|
         points += points_by_match(match)
       end
     end
