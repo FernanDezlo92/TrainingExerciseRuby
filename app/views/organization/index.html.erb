@@ -24,7 +24,8 @@
             <td><%= organization.logo %></td>
             <td><%= organization.name %></td>
             <td>
-              <%= link_to 'Show', organization %>
+              <%= link_to 'Show Season', organization, class: 'btn btn-sm btn-primary' %>
+              <%= link_to 'List Seasons', organization_seasons_path(organization), class: 'btn btn-sm btn-primary' %>
             </td>
           </tr>
         <% end %>

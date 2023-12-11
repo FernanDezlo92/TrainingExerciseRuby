@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "organization#index"
   get "organization/:id" => "organization#show", as: :organization
-  get "organization/:organization_id/seasons" => "season#index", as: :seasons
+  get "organization/:id/seasons" => "season#index", as: :organization_seasons
   get "organization/:organization_id/seasons/:id" => "season#show", as: :season
-  get "organization/:organization_id/seasons/:season_id/rounds" => "round#index", as: :rounds
-  get "organization/:organization_id/seasons/:season_id/rounds/:id" => "round#show", as: :round
+  get "organization/:organization_id/seasons/:id/rounds" => "round#index", as: :rounds
+  get "organization/:organization_id/seasons/:id/rounds/:id" => "round#show", as: :round
 
   # root "posts#index"
 end

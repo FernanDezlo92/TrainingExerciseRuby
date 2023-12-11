@@ -4,7 +4,7 @@ class SeasonController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @organization = Organization.find(params[:organization_id])
+    @organization = Organization.find(params[:id])
     @seasons = @organization.seasons.active
   end
 

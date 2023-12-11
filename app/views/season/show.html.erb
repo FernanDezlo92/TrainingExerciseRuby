@@ -52,15 +52,13 @@
                 <th scope="row"><%= round.id %></th>
                 <td><%= round.name %></td>
                 <td>
-                    <%= link_to "Show", season_path(@season) %>
+                  <%= link_to 'Show round', round, class: 'btn btn-sm btn-primary'%>
+                  <%= link_to 'List round', rounds_path, class: 'btn btn-sm btn-primary' %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        <button type="button" class="btn btn-info">
-            <a class="nav-link" href="/round">Show all rounds</a>
-        </button>
       </div>
     </div>
   </div>
