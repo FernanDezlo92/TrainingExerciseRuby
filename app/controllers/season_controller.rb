@@ -5,7 +5,8 @@ class SeasonController < ApplicationController
 
   def index
     @organization = Organization.find(params[:id])
-    @seasons = @organization.seasons.active
+    @seasons = @organization.seasons
+    @non_active_seasons = @organization.seasons.nonactive
   end
 
   def show

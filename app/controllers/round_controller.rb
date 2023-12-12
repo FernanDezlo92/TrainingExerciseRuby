@@ -14,5 +14,6 @@ class RoundController < ApplicationController
     @users = @organization.users
     @seasons = @organization.seasons.active
     @matches = @round.matches
+    @teams = @round.teams
   end
 end

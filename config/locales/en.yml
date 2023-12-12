@@ -29,3 +29,21 @@
 
 en:
   hello: "Hello world"
+  views:
+    navbar:
+      _navbar:
+        home: Home
+        close_session: Close Session
+        admin: Admin
+    organization:
+      index:
+        listing_organization: Listing Organization
+        photo: Photo
+        name: Name
+        action: Action
+      show:
+        active_seasons: Active seasons
+        photo: Photo
+        name: Name
+        year: Yearsadadasd
+        action: Action

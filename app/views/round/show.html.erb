@@ -6,23 +6,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
     </head>
-    <%= render 'layouts/navbar/navbar' %>
-    <h1><%= @round.name %></h1>
-    <h2>Active Matches</h2>
-        <table class="table table-hover">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Start Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @matches.each do |match| %>
+    <body>
+        <%= render 'layouts/navbar/navbar' %>
+        <h1><%= @round.name %></h1>
+        </br>
+        <div class="col-md-6">
+            <h2>Matches</h2>
+            <table class="table table-hover">
+            <thead>
                 <tr>
-                    <th scope="row"><%= match.id %></th>
-                    <td><%= match.start_time %></td>
+                <th scope="col">LOCAL</th>
+                <th scope="col">Score</th>
+                <th scope="col">VISITANTE</th>
+                <th scope="col">Score</th>
                 </tr>
-            <% end %>
-        </tbody>
+            </thead>
+            <tbody>
+                <% @teams.each do |team| %>
+                    <tr>
+                        <th scope="row"><%= team.name %></th>
+                        <td><%= team.score %></td> 
+                    </tr>
+                <% end %>
+            </tbody>
+        </div>
     </body>
 </html>

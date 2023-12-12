@@ -7,24 +7,24 @@
     </head>
   <body>
     <%= render 'layouts/navbar/navbar' %>
-    <h1>Listing Organization</h1>
+    <h1><%= t(".listin_organization") %></h1>
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Photo</th>
-          <th scope="col">Name</th>
-          <th scope="col">Action</th>
+          <th scope="col"><%= t(".photo") %></th>
+          <th scope="col"><%= t(".name") %></th>
+          <th scope="col"><%= t(".action") %></th>
         </tr>
       </thead>
       <tbody>
         <% @organizations.each do |organization| %>
           <tr>
             <th scope="row"><%= organization.id %></th>
-            <td><%= organization.logo %></td>
+            <td><%= image_tag url_for(organization.logo) %></td>
             <td><%= organization.name %></td>
             <td>
-              <%= link_to 'Show Season', organization, class: 'btn btn-sm btn-primary' %>
+              <%= link_to 'Show Organization', organization, class: 'btn btn-sm btn-primary' %>
               <%= link_to 'List Seasons', organization_seasons_path(organization), class: 'btn btn-sm btn-primary' %>
             </td>
           </tr>

@@ -26,7 +26,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @players.sort_by { |player| player.points_by_season(@season) }.each do |player| %>
+            <% @players.sort_by { |player| player.points_by_season(@season) }.reverse.each do |player| %>
               <tr>
                 <th scope="row"><%= player.user.email %></th>
                 <td><%= player.points_by_season(@season) %></td>
