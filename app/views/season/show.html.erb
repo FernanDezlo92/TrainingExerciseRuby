@@ -52,8 +52,8 @@
                 <th scope="row"><%= round.id %></th>
                 <td><%= round.name %></td>
                 <td>
-                  <%= link_to 'Show round', round, class: 'btn btn-sm btn-primary'%>
-                  <%= link_to 'List round', rounds_path, class: 'btn btn-sm btn-primary' %>
+                  <%= link_to 'Show round', round_path(organization_id: round.season.organization.id, id: round.id), class: 'btn btn-sm btn-primary' %>
+                  <%= link_to 'List round', rounds_path(organization_id: round.season.organization.id, season_id: round.season.id), class: 'btn btn-sm btn-primary' %>
                 </td>
               </tr>
             <% end %>

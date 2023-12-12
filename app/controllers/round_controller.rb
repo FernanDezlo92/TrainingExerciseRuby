@@ -4,7 +4,8 @@ class RoundController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rounds = Round.all
+    @season = Season.find(params[:id])
+    @rounds = @season.rounds
   end
 
   def show
