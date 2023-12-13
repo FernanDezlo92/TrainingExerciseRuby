@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    </head>
-  <body>
-    <%= render 'layouts/navbar/navbar' %>
-    <h1><%= t(".listin_organization") %></h1>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col"><%= t(".photo") %></th>
-          <th scope="col"><%= t(".name") %></th>
-          <th scope="col"><%= t(".action") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @organizations.each do |organization| %>
-          <tr>
-            <th scope="row"><%= organization.id %></th>
-            <td><%= image_tag url_for(organization.logo) %></td>
-            <td><%= organization.name %></td>
-            <td>
-              <%= link_to 'Show Organization', organization, class: 'btn btn-sm btn-primary' %>
-              <%= link_to 'List Seasons', organization_seasons_path(organization), class: 'btn btn-sm btn-primary' %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-  </body>
-</html>
+<h1><%= t(".listin_organization") %></h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t(".photo") %></th>
+      <th scope="col"><%= t(".name") %></th>
+      <th scope="col"><%= t(".action") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @organizations.each do |organization| %>
+      <tr>
+        <th scope="row"><%= organization.id %></th>
+        <td><%= image_tag url_for(organization.logo) %></td>
+        <td><%= organization.name %></td>
+        <td>
+          <%= link_to 'Show Season', organization_path(organization.id), class: 'btn btn-sm btn-primary' %>
+          <%= link_to 'List of Seasons', organization_season_index_path(organization.id), class: 'btn btn-sm btn-primary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

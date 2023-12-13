@@ -16,6 +16,8 @@ services:
     links:
       - pg
     command: bundle exec puma
+    stdin_open: true
+    tty: true
   pg:
     image: postgres
     volumes:

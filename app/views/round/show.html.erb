@@ -1,32 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    </head>
-    <body>
-        <%= render 'layouts/navbar/navbar' %>
-        <h1><%= @round.name %></h1>
-        </br>
-        <div class="col-md-6">
-            <h2>Matches</h2>
-            <table class="table table-hover">
-            <thead>
+
+<h1><%= @round.name %></h1>
+</br>
+
+<div class="col-md-6">
+    <h2>Matches</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Equipos</th>
+            <th scope="col">Score</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @teams.each do |team| %>
                 <tr>
-                <th scope="col">Equipos</th>
-                <th scope="col">Score</th>
+                    <th scope="row"><%= team.name %></th>
+                    <td><%= team.score %></td>
+                    <% if user_signed_in? && current_user.admin? %>
+                        <td>
+                            <%= link_to 'Edit Team', edit_organization_season_round_match_team_path(@organization.id, @season.id, @round.id, team.match.id, team.id), class: 'btn btn-sm btn-primary' %>
+                        </td>
+                    <% end %>
                 </tr>
-            </thead>
-            <tbody>
-                <% @teams.each do |team| %>
-                    <tr>
-                        <th scope="row"><%= team.name %></th>
-                        <td><%= team.score %></td> 
-                    </tr>
-                <% end %>
-            </tbody>
-        </div>
-    </body>
-</html>
+            <% end %>
+        </tbody>
+    </table>
+    <%= link_to 'Back', organization_season_path(current_organization.id, current_season.id, current_round.id),  class: 'btn btn-sm btn-primary' %>
+</div>

@@ -1,67 +1,51 @@
-<!DOCTYPE html>
-<html>
-
-<head>
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-</head>
-
-<body>
-  <%= render 'layouts/navbar/navbar' %>
-
-  <div class="container mt-4">
-    <h1><%= @season.name %></h1> 
-    <h2><%= @season.season_year %></h2>
-    <br>
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Players Score</h2>
-        <table class="table table-hover">
-          <thead>
+<div class="container mt-4">
+  <h1><%= @season.name %></h1> 
+  <h2><%= @season.season_year %></h2>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Players Score</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @players.sort_by { |player| player.points_by_season(@season) }.reverse.each do |player| %>
             <tr>
-              <th scope="col">Player</th>
-              <th scope="col">Score</th>
+              <th scope="row"><%= player.user.email %></th>
+              <td><%= player.points_by_season(@season) %></td>
             </tr>
-          </thead>
-          <tbody>
-            <% @players.sort_by { |player| player.points_by_season(@season) }.reverse.each do |player| %>
-              <tr>
-                <th scope="row"><%= player.user.email %></th>
-                <td><%= player.points_by_season(@season) %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="col-md-6">
-        <h2>Active Rounds</h2>
-        <table class="table table-hover">
-          <thead>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h2>Active Rounds</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rounds.each do |round| %>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Action</th>
+              <th scope="row"><%= round.id %></th>
+              <td><%= round.name %></td>
+              <td>
+                <%= link_to 'Show round', organization_season_round_path(@organization.id, @season.id, round.id), class: 'btn btn-sm btn-primary' %>
+                <%= link_to 'List round', organization_season_round_index_path(@organization.id, @season.id,), class: 'btn btn-sm btn-primary' %>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <% @rounds.each do |round| %>
-              <tr>
-                <th scope="row"><%= round.id %></th>
-                <td><%= round.name %></td>
-                <td>
-                  <%= link_to 'Show round', round_path(organization_id: round.season.organization.id, id: round.id), class: 'btn btn-sm btn-primary' %>
-                  <%= link_to 'List round', rounds_path(organization_id: round.season.organization.id, season_id: round.season.id), class: 'btn btn-sm btn-primary' %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-</body>
-
-</html>
+  <%= link_to 'Back', organization_path(current_organization.id, current_season.id),  class: 'btn btn-sm btn-primary' %>
+</div>

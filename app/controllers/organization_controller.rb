@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class OrganizationController < ApplicationController
+  include HasOrganization
+
   before_action :authenticate_user!
 
   def index
@@ -8,8 +10,14 @@ class OrganizationController < ApplicationController
   end
 
   def show
-    @organization = Organization.find(params[:id])
+    @organization = current_organization
     @users = @organization.users
     @seasons = @organization.seasons.active
+  end
+
+  private
+
+  def organization_param
+    :id
   end
 end

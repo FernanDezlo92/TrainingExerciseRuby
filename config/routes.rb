@@ -14,11 +14,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "organization#index"
-  get "organization/:id" => "organization#show", as: :organization
-  get "organization/:id/seasons" => "season#index", as: :organization_seasons
-  get "organization/:organization_id/seasons/:id" => "season#show", as: :season
-  get "organization/:organization_id/seasons/:id/rounds" => "round#index", as: :rounds
-  get "organization/:organization_id/seasons/:id/rounds/:id" => "round#show", as: :round
+  resources :organization, only: [:index, :show] do
+    resources :season, only: [:index, :show] do
+      resources :round, only: [:index, :show] do
+        resources :match, only: [:index, :show] do
+          resources :team, only: [:edit, :update]
+        end
+      end
+    end
+  end
 
   # root "posts#index"
 end

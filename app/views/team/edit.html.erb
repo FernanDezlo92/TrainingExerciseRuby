@@ -1,0 +1,13 @@
+<h1>Edit team</h1>
+</br>
+<%= form_for @team, url: organization_season_round_match_team_path do |f| %>
+    <div>
+        <%= f.label :score %>
+        <%= f.text_field :score %>
+    </div>
+    <%= f.submit %>
+<% end %>
+</br>
+<%= link_to 'Back', organization_season_round_path(current_organization.id, current_season.id, current_round.id, @team.match.id),  class: 'btn btn-sm btn-primary' %>
+
+              
