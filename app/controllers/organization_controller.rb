@@ -15,6 +15,25 @@ class OrganizationController < ApplicationController
     @seasons = @organization.seasons.active
   end
 
+  def new
+    @organization = Organization.new
+    @users = @organization.users
+    @players = @organization.players
+  end
+
+  def create
+    @organization = Organization.new(params.require(:organization).permit(:name, :logo))
+    @player = @organization.players.new(user_id: current_user.id, admin: true)
+
+    ActiveRecord::Base.transaction do
+      @organization.save!
+      @player.save!
+    rescue ActiveRecord::StatementInvalid
+      render :new
+    end
+    redirect_to organization_index_path(@organization), notice: "organization was successfully created."
+  end
+
   private
 
   def organization_param

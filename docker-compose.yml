@@ -24,6 +24,10 @@ services:
       - pg-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
+  redis: 
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
 volumes:
   node_modules: {}
   bundle: {}
