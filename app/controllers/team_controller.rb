@@ -23,7 +23,10 @@ class TeamController < ApplicationController
     @teams = @round.teams
 
     if @team.update(params.require(:team).permit(:score))
-      clear_player_points_cache(current_user, @team.match)
+      @team.players.each do |player|
+        player.clear_points_by_match_cache(@team.match)
+        player.clear_points_by_season_cache(@team.match.round.season)
+      end
 
       redirect_to organization_season_round_path(@organization, @season, @round), notice: "Team was successfully updated."
     else

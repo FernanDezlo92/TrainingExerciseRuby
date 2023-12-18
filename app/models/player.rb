@@ -9,21 +9,32 @@ class Player < ApplicationRecord
   # Method
 
   def points_by_match(match)
-    team = match.team_for_player(self)
     Rails.cache.fetch("player-points-by-match-#{match.id}-#{id}") do
+      team = match.team_for_player(self)
+      return 0 unless team
+
       team.points
     end
-    0 unless team
+  end
+
+  def clear_points_by_match_cache(match)
+    Rails.cache.delete("player-points-by-match-#{match.id}-#{id}")
   end
 
   def points_by_season(season)
-    points = 0
-    season.rounds.each do |round|
-      round.matches.each do |match|
-        points += points_by_match(match)
+    Rails.cache.fetch("player-points-by-season-#{season.id}-#{id}") do
+      points = 0
+      season.rounds.each do |round|
+        round.matches.each do |match|
+          points += points_by_match(match)
+        end
       end
+      points
     end
-    points
+  end
+
+  def clear_points_by_season_cache(season)
+    Rails.cache.delete("player-points-by-match-#{season.id}-#{id}")
   end
 end
 
