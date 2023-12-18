@@ -1,0 +1,24 @@
+<h1><%= t(".new_season") %></h1>
+
+<%= form_for @season, url: "/season" do |f| %>
+    <div class="form-group">
+        <%= f.label :name, t(".name") %>
+        <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :start_date, t(".start_date") %>
+        <%= f.date_field :start_date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :end_date, t(".end_date") %>
+        <%= f.date_field :end_date, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit%>
+    </div>
+<% end %>
+</br>
+<%= link_to t(".back"), organization_season_index_path, class: 'btn btn-sm btn-primary' %>

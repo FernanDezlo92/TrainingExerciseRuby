@@ -10,9 +10,10 @@ class Player < ApplicationRecord
 
   def points_by_match(match)
     team = match.team_for_player(self)
-    return 0 unless team
-
-    team.points
+    Rails.cache.fetch("player-points-by-match-#{match.id}-#{id}") do
+      team.points
+    end
+    0 unless team
   end
 
   def points_by_season(season)

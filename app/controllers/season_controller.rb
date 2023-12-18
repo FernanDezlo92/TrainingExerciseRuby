@@ -21,6 +21,26 @@ class SeasonController < ApplicationController
     @players = @organization.players
   end
 
+  def new
+    @organization = current_organization
+    @season = @organization.seasons.new
+    @users = @organization.users
+    @players = @organization.players
+  end
+
+  def create
+    @users = current_user
+    @organization = current_organization
+    @seasons = @organization.seasons.new(params.require(:season).permit(:name, :start_date, :end_date))
+
+    ActiveRecord::Base.transaction do
+      @season.save!
+    rescue ActiveRecord::StatementInvalid
+      render :new
+    end
+    redirect_to organization_season_index_path(@organization), notice: "Season was successfully created."
+  end
+
   private
 
   def season_param

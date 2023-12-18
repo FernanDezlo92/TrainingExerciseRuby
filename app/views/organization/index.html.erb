@@ -17,7 +17,7 @@
     <% @organizations.each do |organization| %>
       <tr>
         <th scope="row"><%= organization.id %></th>
-        <td><%= image_tag url_for(organization.logo) %></td>
+        <td><%= image_tag url_for(organization.logo), class: 'img-thumbnail' %></td>
         <td><%= organization.name %></td>
         <td>
           <%= link_to 'Show Season', organization_path(organization.id), class: 'btn btn-sm btn-primary' %>

@@ -73,4 +73,5 @@ gem "cancancan"
 gem "cssbundling-rails"
 gem "devise", "~> 4.9"
 gem "rails_admin", "~> 3.0"
-gem "redis"
+
+gem "redis-rails"

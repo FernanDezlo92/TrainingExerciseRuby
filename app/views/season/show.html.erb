@@ -5,22 +5,24 @@
   <div class="row">
     <div class="col-md-6">
       <h2>Players Score</h2>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Player</th>
-            <th scope="col">Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @players.sort_by { |player| player.points_by_season(@season) }.reverse.each do |player| %>
+      <% cache do %>
+        <table class="table table-hover">
+          <thead>
             <tr>
-              <th scope="row"><%= player.user.email %></th>
-              <td><%= player.points_by_season(@season) %></td>
+              <th scope="col">Player</th>
+              <th scope="col">Score</th>
             </tr>
-          <% end %>
-        </tbody>
+          </thead>
+          <tbody>
+            <% @players.sort_by { |player| player.points_by_season(@season) }.reverse.each do |player| %>
+              <tr>
+                <th scope="row"><%= player.user.email %></th>
+                <td><%= player.points_by_season(@season) %></td>
+              </tr>
+            <% end %>
+          </tbody>
       </table>
+      <% end %>
     </div>
     <div class="col-md-6">
       <h2>Active Rounds</h2>

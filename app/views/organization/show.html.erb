@@ -2,8 +2,10 @@
 </br>
 <div>
     <h2><%= t(".listing_season") %></h2>
+</br>
     <%= link_to 'List of Seasons', organization_season_index_path(@organization.id), class: 'btn btn-sm btn-primary' %>
-    </br>
+</br>
+</br>
 </div>
 <h2><%= t(".active_seasons") %></h2>
     <table class="table table-hover">
@@ -28,6 +30,6 @@
         <% end %>
     </tbody>
 </table>
-<%= link_to 'Back', organization_path(current_organization),  class: 'btn btn-sm btn-primary' %>
+<%= link_to 'Back', organization_index_path(current_organization),  class: 'btn btn-sm btn-primary' %>
 
            
